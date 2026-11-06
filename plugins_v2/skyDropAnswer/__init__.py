@@ -30,7 +30,7 @@ __plugin__ = {
     "version": "2.1.12",
     "author": "Yy",
     "description": "天空答题奖励 + 每小时智能触发：模板管理/AI答题/自动触发掉落一体化。",
-    "icon": "https://raw.githubusercontent.com/yyned2501/AWBotNest-Plugins/main/icons/skyDropAnswer.svg",
+    "icon": "https://raw.githubusercontent.com/yyned2501/AWBotHub-Plugins/main/icons/skyDropAnswer.svg",
     "tags": ["答题", "AI 答题", "模板管理", "自动触发"],
     "changelog": (
         "v2.1.12 修复：\n"

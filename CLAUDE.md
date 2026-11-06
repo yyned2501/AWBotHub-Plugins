@@ -1,11 +1,11 @@
-# AWBotNest-Plugins 工作流
+# AWBotHub-Plugins 工作流
 
 ## 改插件标准流程
 
 1. 先加载 `plugin-guide` skill，确认插件契约和 ctx API
 2. 参考同类在用的插件写法，不自己发明
 3. 改完代码跑 `ruff check` + `ruff format --check`
-4. **同步提升版本号：`__init__.py` 的 `__plugin__["version"]` 和 `manifest.json` 对应条目必须一起改，漏一个算 bug**
+4. **同步提升版本号：`__init__.py` 的 `__plugin__["version"]` 和 `manifest_v2.json` 对应条目必须一起改，漏一个算 bug**
 5. 更新 changelog
 6. **先 commit + push 到远程仓库**
 7. 再调用 `deploy-plugin` skill 同步到平台并热重载
@@ -26,7 +26,7 @@
 本仓库维护两类同步自上游的文档，**官方更新后要及时同步到本地**，避免本地落后导致写错契约：
 
 - **平台文档**（上游：`https://github.com/AWdress/AWBotNest/tree/main/docs`）：`docs/PLUGIN_GUIDE.md`、`docs/SPEC.md` 直接镜像上游同名文件，`docs/API.md`、`docs/CLAUDE.md` 为上层平台文档。以官方版本为准，本地版本是校验过的快照，**不做本地改动**（否则下次同步会覆盖丢失）。
-- **官方 skill 库**（上游：`https://github.com/AWdress/AWBotNest-Plugins/tree/main/skills/software-development`）：`awbotnest-plugin-development/`、`awbotnest-plugin-pitfalls/` 两份 SKILL 已整合进本地 `docs/` 与 `.claude/skills/plugin-guide/`。官方新增契约/坑时，对照补进本地整合 skill。
+- **官方 skill 库**（上游：`https://github.com/AWdress/AWBotHub-Plugins/tree/main/skills/software-development`）：`awbotnest-plugin-development/`、`awbotnest-plugin-pitfalls/` 两份 SKILL 已整合进本地 `docs/` 与 `.claude/skills/plugin-guide/`。官方新增契约/坑时，对照补进本地整合 skill。
 
 **同步流程**（官方可见更新后，或每隔一段时间核对）：
 1. `git clone --depth 1`（或 `git fetch`）拉上游两份仓库到临时目录。

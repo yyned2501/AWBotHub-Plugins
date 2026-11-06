@@ -51,7 +51,7 @@ async def handler(client, message):
 
 ## 发布类
 
-**发布时元数据只改了一处** — 卡片图标/版本/描述/changelog 在某些界面过期。发往 AWBotNest-Plugins 时同步 `__plugin__` 与 `manifest.json` 的重复元数据，尤其 version/icon/description/changelog。
+**发布时元数据只改了一处** — 卡片图标/版本/描述/changelog 在某些界面过期。发往 AWBotHub-Plugins 时同步 `__plugin__` 与 `manifest_v2.json` 的重复元数据，尤其 version/icon/description/changelog。
 
 ## 运行治理类
 
@@ -73,7 +73,7 @@ async def handler(client, message):
 
 **去重靠正则字符串精确相等** — AI 每次生成的正则字符串都不同，精确相等判不出同类。应按 filename/题型/归一化正则/样例互配等多信号判同类。
 
-**`manifest.json` 版本落后于 `__plugin__`** — 商店识别不到更新，已安装实例收不到推送。改代码必须同步抬高 manifest 版本。
+**`manifest_v2.json` 版本落后于 `__plugin__`** — 商店识别不到更新，已安装实例收不到推送。改代码必须同步抬高 manifest 版本。
 
 **用受限 builtins 沙箱执行 AI 生成的模板** — `__import__=None` 会让模板里的 `import re` 直接炸。本仓库模板需要标准库能力，不做沙箱限制。
 
@@ -93,4 +93,4 @@ async def handler(client, message):
 - [ ] Vue 默认值与构建产物已同步
 - [ ] 依赖已声明、兼容 3.13、未自装
 - [ ] 长时调度任务适当时 `ctx.report_progress` 报进度；有 `self_check(ctx)` 则只读、15 秒内完成
-- [ ] 发布时 `__plugin__` 与 `manifest.json` 元数据一致
+- [ ] 发布时 `__plugin__` 与 `manifest_v2.json` 元数据一致

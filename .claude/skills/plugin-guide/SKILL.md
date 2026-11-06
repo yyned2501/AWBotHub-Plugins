@@ -23,7 +23,7 @@ AWBotNest 是「**平台内核 + 单文件插件**」的 Telegram 机器人平�
 
 > 一句话：**想要啥功能，写一个文件丢进去，勾选启用，完事。**
 
-本仓库 `AWdress/AWBotNest-Plugins` 是平台**内置的官方插件市场仓库**——它自动出现在每个平台的「插件商店」里。在此仓库写插件，除了符合插件契约，还要遵守仓库规则（见文末「本仓库专属规则」）。
+本仓库 `AWdress/AWBotHub-Plugins` 是平台**内置的官方插件市场仓库**——它自动出现在每个平台的「插件商店」里。在此仓库写插件，除了符合插件契约，还要遵守仓库规则（见文末「本仓库专属规则」）。
 
 ---
 
@@ -34,7 +34,7 @@ AWBotNest 是「**平台内核 + 单文件插件**」的 Telegram 机器人平�
 2. `plugins/_TEMPLATE.py`（或 `plugins/_TEMPLATE_VUE/`，见 `references/minimal-plugin-template.py`）；
 3. 本仓库 `README.md`；
 4. **目标插件 + 1–3 个相似的在用插件**——复用已验证的触发/过滤/配置模式；
-5. 发布到本仓库时再看 `manifest.json`。
+5. 发布到本仓库时再看 `manifest_v2.json`。
 
 **当运行行为与记忆不符，优先信插件指南与模板**，别从平台内核反推插件规则。
 
@@ -474,7 +474,7 @@ vue 模式无平台「保存」按钮，由组件自己调 `host.saveConfig`。�
 
 ## 9. 发布到 GitHub 插件市场
 
-仓库根放 `manifest.json`（带版本号，平台据此识别更新）：
+仓库根放 `manifest_v2.json`（带版本号，平台据此识别更新）：
 
 ```json
 {
@@ -500,13 +500,13 @@ vue 模式无平台「保存」按钮，由组件自己调 `host.saveConfig`。�
 
 ---
 
-## 11. 本仓库专属规则（AWBotNest-Plugins）
+## 11. 本仓库专属规则（AWBotHub-Plugins）
 
 - 这是**插件市场仓库**，不是平台仓库——**不改平台内核**。
-- **改插件代码必须同步提升版本号：`__plugin__["version"]`（`__init__.py`）和 `manifest.json` 对应条目一起改，漏一个算 bug**，否则商店识别不到更新、已安装实例收不到推送。建议同时更新 `__plugin__["changelog"]`。
-- 新插件先确认 `manifest.json` 里没有同 `id`，再加进去。
+- **改插件代码必须同步提升版本号：`__plugin__["version"]`（`__init__.py`）和 `manifest_v2.json` 对应条目一起改，漏一个算 bug**，否则商店识别不到更新、已安装实例收不到推送。建议同时更新 `__plugin__["changelog"]`。
+- 新插件先确认 `manifest_v2.json` 里没有同 `id`，再加进去。
 - Vue 插件改了 `frontend/src` 必须 `npm run build` 重新生成 `dist/` 并提交（平台加载的是构建产物）。
-- 同步机制：直接操作远程 `AWdress/AWBotNest-Plugins`（非 fork）。
+- 同步机制：直接操作远程 `AWdress/AWBotHub-Plugins`（非 fork）。
 
 ## 12. 故障排查 & 数据位置
 

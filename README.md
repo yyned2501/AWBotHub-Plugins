@@ -1,4 +1,4 @@
-# AWBotNest-Plugins
+# AWBotHub-Plugins
 
 > AWBotNest 官方插件仓库 —— 平台**内置**此仓库，它会自动出现在每个平台的「插件商店」里。这里的每个插件都遵循平台「**单文件 / 文件夹插件**」规范。
 
@@ -113,18 +113,20 @@ async def teardown(ctx):
 
 ---
 
-## manifest.json（插件市场清单）
+## manifest_v2.json（插件市场清单）
 
-仓库根的 [manifest.json](manifest.json) 是插件市场清单，key = 插件 id。平台据此渲染市场，并靠 `version` 判断更新：
+仓库根的 [manifest_v2.json](manifest_v2.json) 是 V2 插件市场清单，`plugins` 下的 key = 插件 id。平台据此渲染市场，并靠 `version` 判断更新：
 
 ```json
 {
-  "my_feature": {
-    "name": "我的功能",
-    "version": "1.0.0",
-    "author": "你",
-    "description": "...",
-    "path": "plugins/my_feature.py"
+  "plugins": {
+    "my_feature": {
+      "name": "我的功能",
+      "version": "1.0.0",
+      "author": "你",
+      "description": "...",
+      "path": "plugins_v2/my_feature.py"
+    }
   }
 }
 ```
@@ -143,7 +145,7 @@ async def teardown(ctx):
 2. 找到想要的插件点「安装」（落盘到本地，**不会自动启用**）。
 3. 到「我的插件」打开开关启用。需要的话点「配置」调参数。
 
-平台会定时刷新商店列表，并对**已安装**插件按 `manifest.json` 的版本号推送更新（更新后手动「重载」生效）。新插件不会自动安装，始终由你在商店里手动选择。
+平台会定时刷新商店列表，并对**已安装**插件按 `manifest_v2.json` 的版本号推送更新（更新后手动「重载」生效）。新插件不会自动安装，始终由你在商店里手动选择。
 
 ---
 

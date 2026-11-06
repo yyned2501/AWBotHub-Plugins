@@ -20,11 +20,11 @@
 | V1 源码可从 git 历史取回 | `git show f4d7914^:plugins/scratch.py` → 495 行，`__plugin__["version"]="1.6.2"`，`name="天空刮奖"`，`scope="user"` |
 | 移除时间与提交 | `f4d7914 \| 2026-09-11 16:49 \| chore(plugins): 移除 scratch / battleroyale / learning`（提交信息未写原因） |
 | 平台已是 V2 / Telethon | **真机运行 telethon 1.45.0**（`.venv` 实测 + `uv.lock:838`）；`requirements.txt:2` 钉 `==1.44.0`、`pyproject.toml:11` 是 `>=1.44,<2` —— 三处口径不一致，勘误与处置见 **§13** |
-| V2 插件树 | `AWBotNest-Plugins/plugins_v2/{juai_checkin,skyDropAnswer,skyGame,skyRedPacket}` |
+| V2 插件树 | `AWBotHub-Plugins/plugins_v2/{juai_checkin,skyDropAnswer,skyGame,skyRedPacket}` |
 | V1 代码在 V2 上必崩（根因） | 实例 `data/plugin_events.jsonl`：`scratch:event:on_scratch_card — AttributeError: 'Message' object has no attribute 'caption'`。Telethon `Message` 无 `caption`，V1 的 `message.text or message.caption` 直接抛错 |
 | 实例当前未装 | `GET http://localhost:18001/api/plugins` → 仅 `juai_checkin`、`skyGame`；`data/plugins/scratch/` 为空目录残留；`data/kv/` 无 scratch |
 | 图标仍在，无需新建 | `icons/scratch.svg` 存在（`8b4ca9a` 引入，未被移除） |
-| 仓库测试基线 | `cd /home/hermes/projects/AWBotNest-Plugins && .venv/bin/python -m pytest tests -q` → **481 passed in 12.45s** |
+| 仓库测试基线 | `cd /home/hermes/projects/AWBotHub-Plugins && .venv/bin/python -m pytest tests -q` → **481 passed in 12.45s** |
 | 目标群 / Bot（V1 默认配置） | `target_group=-1001326208894`、`bot_id=0`（0 = 不按 Bot 过滤）；开发文档记录 Bot 为 `@lucifer_hdsky_bot`（散财童子），见 `~/.hermes/scripts/scratch_plugin_spec.md` |
 
 玩法（照搬，不改）：群里发 `/scratch` → Bot 回一张 3×3 刮刮乐（每格 100 银元）→ 插件随机逐格点击 → 一旦「累计派奖 ≥ 已刮格数×100」立即点「放弃」停手 → 没停就按冷却连发下一张 `/scratch` → 连续亏损达上限自动停止（关插件重开重置）。
@@ -103,7 +103,7 @@
 
 ```bash
 # 8.1 测试（基线 481，新增只许加不许减；任何既有用例失败 = 不通过）
-cd /home/hermes/projects/AWBotNest-Plugins && .venv/bin/python -m pytest tests -q
+cd /home/hermes/projects/AWBotHub-Plugins && .venv/bin/python -m pytest tests -q
 # 期望：>= 481 passed, 0 failed
 
 # 8.2 lint（line-length=120）

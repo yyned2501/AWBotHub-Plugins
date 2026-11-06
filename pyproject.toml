@@ -1,5 +1,5 @@
 [project]
-name = "awbotnest-plugins"
+name = "awbothub-plugins"
 version = "0.1.0"
 requires-python = ">=3.12"
 
@@ -7,8 +7,6 @@ requires-python = ">=3.12"
 line-length = 120
 exclude = [
     ".claude",
-    "plugins/_TEMPLATE.py",
-    "plugins/skyDropAnswer/templates",
     "plugins_v2/skyDropAnswer/templates",
 ]
 

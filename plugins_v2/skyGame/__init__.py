@@ -36,7 +36,7 @@ __plugin__ = {
     "version": "1.30.0",
     "author": "Yy",
     "description": "天空系列游戏统一入口：炸金花/养马/十点半自动参与、幸运轮盘免费抽奖、刮刮乐掉落兜底。",
-    "icon": "https://raw.githubusercontent.com/yyned2501/AWBotNest-Plugins/main/icons/skyGame.svg",
+    "icon": "https://raw.githubusercontent.com/yyned2501/AWBotHub-Plugins/main/icons/skyGame.svg",
     "scope": "user",
     "plugin_api_version": 2,
     "cookie_domains": ["hdsky.supertimi.de", "hdsky.me"],

@@ -1,4 +1,4 @@
-# AWBotNest-Plugins .clinerules
+# AWBotHub-Plugins .clinerules
 
 ## 项目本质
 这是一个 AWBotNest 平台的**官方插件仓库**。每个文件/文件夹 = 一个独立插件，遵循三段式契约。
@@ -11,7 +11,7 @@
 5. **禁止 `print`**——用 `ctx.log`
 6. **插件之间禁止互相 import**——共用逻辑下沉到 `_` 开头的辅助文件
 7. **业务配置只进 `config_schema`**，禁止读写平台配置
-8. **改了代码必须同步抬高 `manifest.json` 中的 `version`**，否则商店收不到更新
+8. **改了代码必须同步抬高 `manifest_v2.json` 中的 `version`**，否则商店收不到更新
 
 ## ctx 能力速查
 - `ctx.config["字段名"]` — 读配置（每次读取最新值）

@@ -5,7 +5,7 @@
       "version": "2.6.2",
       "author": "Yy",
       "description": "天空小秘（bot 8907007783）拼手气红包自动抢：先抢再重试，被拒（未发言）后追加随机大延迟再重试，更像真人。",
-      "icon": "https://raw.githubusercontent.com/yyned2501/AWBotNest-Plugins/main/icons/skyRedPacket.svg",
+      "icon": "https://raw.githubusercontent.com/yyned2501/AWBotHub-Plugins/main/icons/skyRedPacket.svg",
       "tags": [
         "红包",
         "自动抢包",
@@ -21,7 +21,7 @@
       "version": "2.1.12",
       "author": "Yy",
       "description": "天空答题奖励 + 开启时段内定时触发：模板管理/AI答题/自动触发掉落一体化（合并原 skyDropTrigger）。",
-      "icon": "https://raw.githubusercontent.com/yyned2501/AWBotNest-Plugins/main/icons/skyDropAnswer.svg",
+      "icon": "https://raw.githubusercontent.com/yyned2501/AWBotHub-Plugins/main/icons/skyDropAnswer.svg",
       "tags": [
         "答题",
         "AI 答题",
@@ -37,7 +37,7 @@
       "version": "1.30.0",
       "author": "Yy",
       "description": "天空系列游戏统一入口：炸金花自动参与（Terminal EV 多人决策树 + 对手画像）、养马自动养护、十点半自动参与、门户 Cookie 自动续期、掉落配额守卫、幸运轮盘免费抽奖、刮刮乐掉落兜底，Vue 左侧按游戏分组配置。",
-      "icon": "https://raw.githubusercontent.com/yyned2501/AWBotNest-Plugins/main/icons/skyGame.svg",
+      "icon": "https://raw.githubusercontent.com/yyned2501/AWBotHub-Plugins/main/icons/skyGame.svg",
       "tags": [
         "炸金花",
         "养马",
