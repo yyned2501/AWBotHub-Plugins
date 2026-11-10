@@ -2,7 +2,7 @@
 name: plugin-guide
 version: 5
 description: >-
-  Use this skill whenever you write, modify, review, or debug an AWBotNest plugin.
+  Use this skill whenever you write, modify, review, or debug an AWBotHub plugin.
   Single authoritative plugin-authoring skill for this repo — consolidates the platform
   docs (PLUGIN_GUIDE/SPEC/API) and the official awbotnest-plugin-development &
   awbotnest-plugin-pitfalls skills. Covers the workflow (what to read first, local-first
@@ -11,15 +11,15 @@ description: >-
   requirements/deps, cookie_domains/ctx.cookies, group isolation, multi-Bot routing,
   account scope (user|bot|both|standalone), runtime governance (instance_mode/resources/
   ctx.create_task/capabilities/replay events), and marketplace publishing. Load it for
-  ANY task touching AWBotNest plugin code. On-demand references:
+  ANY task touching AWBotHub plugin code. On-demand references:
   references/pitfalls.md (common pitfalls + checklist — read when debugging),
   references/platform-api.md (remote-manage a live instance: enable/reload/config/kv/
   logs/send), references/minimal-plugin-template.py (starter plugin).
 ---
 
-# AWBotNest 插件开发
+# AWBotHub 插件开发
 
-AWBotNest 是「**平台内核 + 单文件插件**」的 Telegram 机器人平台（Python 3.13 + Pyrogram(kurigram) + FastAPI + Vue3）。内核只提供能力，**所有业务功能都是插件**：一个功能 = 一个 `.py` 文件或一个目录包，前端勾选启用即生效，停用即卸载，全程不重启进程。
+AWBotHub 是「**平台内核 + 单文件插件**」的 Telegram 机器人平台（Python 3.13 + Pyrogram(kurigram) + FastAPI + Vue3）。内核只提供能力，**所有业务功能都是插件**：一个功能 = 一个 `.py` 文件或一个目录包，前端勾选启用即生效，停用即卸载，全程不重启进程。
 
 > 一句话：**想要啥功能，写一个文件丢进去，勾选启用，完事。**
 

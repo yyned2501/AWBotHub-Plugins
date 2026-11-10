@@ -1,7 +1,7 @@
 # AWBotHub-Plugins .clinerules
 
 ## 项目本质
-这是一个 AWBotNest 平台的**官方插件仓库**。每个文件/文件夹 = 一个独立插件，遵循三段式契约。
+这是一个 AWBotHub 平台的 **V2 插件仓库**。插件位于 `plugins_v2/`（目录包），由 `manifest_v2.json` 登记，遵循三段式契约。
 
 ## 核心规则
 1. **三段式契约**：每个插件必须包含 `__plugin__` 元数据 + `setup(ctx)` 函数，`teardown(ctx)` 可选

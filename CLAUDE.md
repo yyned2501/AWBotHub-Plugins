@@ -25,7 +25,7 @@
 
 本仓库维护两类同步自上游的文档，**官方更新后要及时同步到本地**，避免本地落后导致写错契约：
 
-- **平台文档**（上游：`https://github.com/AWdress/AWBotNest/tree/main/docs`）：`docs/PLUGIN_GUIDE.md`、`docs/SPEC.md` 直接镜像上游同名文件，`docs/API.md`、`docs/CLAUDE.md` 为上层平台文档。以官方版本为准，本地版本是校验过的快照，**不做本地改动**（否则下次同步会覆盖丢失）。
+- **平台文档**（上游：`https://github.com/AWdress/AWBotHub/tree/main/docs`）：`docs/PLUGIN_GUIDE.md`、`docs/SPEC.md` 直接镜像上游同名文件，`docs/API.md`、`docs/CLAUDE.md` 为上层平台文档。以官方版本为准，本地版本是校验过的快照，**不做本地改动**（否则下次同步会覆盖丢失）。
 - **官方 skill 库**（上游：`https://github.com/AWdress/AWBotHub-Plugins/tree/main/skills/software-development`）：`awbotnest-plugin-development/`、`awbotnest-plugin-pitfalls/` 两份 SKILL 已整合进本地 `docs/` 与 `.claude/skills/plugin-guide/`。官方新增契约/坑时，对照补进本地整合 skill。
 
 **同步流程**（官方可见更新后，或每隔一段时间核对）：
@@ -35,7 +35,7 @@
 4. skill 变更：把官方新增契约/坑同步进 `.claude/skills/plugin-guide/`（SKILL.md + references/pitfalls.md），保持中文表述与本地风格一致。
 5. 新增/变更需在 changelog 或 PROGRESS.md 记录「同步了哪个上游版本」。
 
-> 注意：本地 `docs/juai-api.md`、`docs/skyGame-hdsky-api.md` 是**第三方平台 API 调研产出**，不属于上游 `AWBotNest/docs`，**不要跟上游做覆盖式同步**（只保留在本地 docs/）。
+> 注意：本地 `docs/juai-api.md`、`docs/skyGame-hdsky-api.md` 是**第三方平台 API 调研产出**，不属于上游 `AWBotHub/docs`，**不要跟上游做覆盖式同步**（只保留在本地 docs/）。
 
 ## 能力唯一化 —— 写新函数前先搜（防重复实现铁律）
 

@@ -57,7 +57,7 @@
       "id": "juai_checkin",
       "version": "2.0.3",
       "author": "Yy",
-      "description": "JUAI 自动签到（多账号）：AWBotNest V2 原生存储、托管任务与 cron 调度，保留原配置表单和 30 天 session 缓存。",
+      "description": "JUAI 自动签到（多账号）：AWBotHub V2 原生存储、托管任务与 cron 调度，保留原配置表单和 30 天 session 缓存。",
       "icon": "https://www.juaiapi.com/favicon.png",
       "tags": [
         "自动签到",

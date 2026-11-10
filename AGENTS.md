@@ -1,6 +1,6 @@
 # AWBotHub-Plugins — 项目上下文
 
-此仓库是 AWBotHub（原 AWBotNest）平台的官方插件市场仓库。每个插件遵守单文件/文件夹二形态、三段式契约。
+此仓库是 AWBotHub 平台的 V2 插件仓库。插件均为 `plugins_v2/` 下的目录包，遵守三段式契约。
 
 **只维护 V2 插件**：`plugins_v2/` + `manifest_v2.json`。平台 V1 已弃用，原 `plugins/` 与 `manifest.json` 已于 2026-11-06 移除（历史见 git log）。
 
@@ -19,7 +19,7 @@ AWBotHub-Plugins/
 ├── pyproject.toml         # Python 项目配置（requires-python>=3.12，dev 组 ruff/pytest）
 ├── uv.lock                # 依赖锁定文件
 ├── README.md              # 项目说明
-├── docs/                  # 从 AWBotNest 同步的平台文档与插件 API 文档
+├── docs/                  # 从 AWBotHub 同步的平台文档与插件 API 文档
 │   ├── PLUGIN_GUIDE.md    # 插件开发指南
 │   ├── SPEC.md            # 平台完整规范
 │   ├── API.md             # 平台 API 文档
@@ -32,7 +32,7 @@ AWBotHub-Plugins/
 
 ## 关键行为准则
 
-- **不改平台内核（AWBotNest 项目）**——这是插件仓库，不是平台仓库
+- **不改平台内核（AWBotHub 项目）**——这是插件仓库，不是平台仓库
 - **改插件代码 → 必须同步改 `manifest_v2.json` 的 `version`**（否则商店推送失效）
 - **新插件先确认不在 manifest 里**，加进去；同时检查是否和已有插件 id 冲突
 - **同步机制**：日常发布直接 `git push origin main`——`origin` 是 `github.com/yyned2501/AWBotHub-Plugins`（实例商店拉这个仓库，需在平台「插件仓库」列表里，即 `PLUGIN_REPOS`）；不是 fork 流程。`AWdress/AWBotHub-Plugins` 是平台文档所称的官方仓库（`docs/CLAUDE.md` 的 `repo_sync`），本仓库改动默认不进那里

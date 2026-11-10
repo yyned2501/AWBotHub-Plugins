@@ -253,8 +253,19 @@ async def test_scratch_once_response_without_scratch_is_not_played() -> None:
 
 
 async def test_tick_skips_outside_window(monkeypatch: pytest.MonkeyPatch) -> None:
+    """窗口外不刮。冻结时刻，避免随真实分钟飘（_fallback_minute 上限 55，传 59 会被夹成 55）。"""
+    import datetime
+    from types import SimpleNamespace
+
     opened: list[str] = []
     monkeypatch.setattr(sc, "_open_client", _spy_client(opened))
+
+    class _FrozenDatetime(datetime.datetime):
+        @classmethod
+        def now(cls, tz: datetime.tzinfo | None = None) -> datetime.datetime:
+            return datetime.datetime(2026, 11, 10, 10, 30, 0, tzinfo=tz)
+
+    monkeypatch.setattr(sc, "datetime", SimpleNamespace(datetime=_FrozenDatetime))
     ctx = _ScratchCtx()
     ctx.config = {"scratch_enabled": True, "scratch_fallback_minute": 59}
     _set_remaining(ctx, 3)

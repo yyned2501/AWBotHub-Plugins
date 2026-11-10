@@ -11,7 +11,7 @@
 
 ## 0. 一句话
 
-把 2026-09-11 从 V1 树移除的单文件插件 `scratch`（天空刮奖 v1.6.2，Pyrogram 运行时）按 AWBotNest V2 插件契约移植为 `plugins_v2/scratch.py`（真机 Telethon **1.45.0** 运行时，见 §13），**行为不变**，并带测试、manifest 条目，最后在本机实例装载验证。
+把 2026-09-11 从 V1 树移除的单文件插件 `scratch`（天空刮奖 v1.6.2，Pyrogram 运行时）按 AWBotHub V2 插件契约移植为 `plugins_v2/scratch.py`（真机 Telethon **1.45.0** 运行时，见 §13），**行为不变**，并带测试、manifest 条目，最后在本机实例装载验证。
 
 ## 1. 背景与实测证据
 

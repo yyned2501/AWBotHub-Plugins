@@ -1,5 +1,5 @@
 # =============================================================================
-# AWBotNest 插件：天空答题 (skyDropAnswer) v2.1.7
+# AWBotHub 插件：天空答题 (skyDropAnswer) v2.1.7
 #
 # 合并自原 skyDropTrigger + skyDropAnswer：
 #   - 答题：监听天空小秘（bot 8907007783）的银元掉落题目，模板/AI 解答并点击按钮领取

@@ -1,4 +1,4 @@
-"""AWBotNest 最小插件模板。
+"""AWBotHub 最小插件模板。
 
 复制到 plugins/<id>.py 后，替换元数据和业务逻辑。
 """

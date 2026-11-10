@@ -1,8 +1,8 @@
 # AWBotHub-Plugins
 
-> AWBotNest 官方插件仓库 —— 平台**内置**此仓库，它会自动出现在每个平台的「插件商店」里。这里的每个插件都遵循平台「**单文件 / 文件夹插件**」规范。
+> AWBotHub V2 插件仓库 —— 在平台「插件仓库」列表（`PLUGIN_REPOS`）加入本仓库后，插件会出现在「插件商店」里。这里的插件遵循平台「**单文件 / 文件夹插件**」规范。
 
-- 平台仓库：[AWdress/AWBotNest](https://github.com/AWdress/AWBotNest)
+- 平台仓库：[AWdress/AWBotHub](https://github.com/AWdress/AWBotHub)
 
 ---
 

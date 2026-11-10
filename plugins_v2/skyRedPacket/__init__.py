@@ -1,5 +1,5 @@
 # =============================================================================
-# AWBotNest 插件：天空红包（skyRedPacket）
+# AWBotHub 插件：天空红包（skyRedPacket）
 #
 # 由 tgbot-n/plugins/user/red_packet/hdsky.py 迁移适配。
 # 天空小秘（bot ID 8907007783）在群组发拼手气红包，

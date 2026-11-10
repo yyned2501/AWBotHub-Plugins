@@ -1,6 +1,6 @@
-# AWBotNest 开放平台 API 文档
+# AWBotHub 开放平台 API 文档
 
-AWBotNest 提供了一套完整的 RESTful API，让第三方工具、AI 助手、自动化脚本可以远程管理平台和插件。
+AWBotHub 提供了一套完整的 RESTful API，让第三方工具、AI 助手、自动化脚本可以远程管理平台和插件。
 
 ## 认证方式
 
@@ -18,7 +18,7 @@ Api-Key: your_api_key_here
 
 ### 获取 API Key
 
-1. 登录 AWBotNest Web 控制台
+1. 登录 AWBotHub Web 控制台
 2. 进入「系统设置」
 3. 在「通知」区域找到「API_KEY」字段
 4. 点击「随机」按钮生成新密钥
@@ -509,7 +509,7 @@ curl -X POST \
 - **AI 辅助开发**：Hermes、OpenClaw、Claude Code 等 AI 工具调用 API 帮助开发和调试插件
 - **自动化运维**：编写脚本批量管理插件、定时收集日志、监控平台状态
 - **CI/CD 集成**：在持续集成流程中自动部署插件、运行测试
-- **第三方集成**：将 AWBotNest 与其他系统集成，实现消息互通、数据同步等
+- **第三方集成**：将 AWBotHub 与其他系统集成，实现消息互通、数据同步等
 
 ## 更新日志
 

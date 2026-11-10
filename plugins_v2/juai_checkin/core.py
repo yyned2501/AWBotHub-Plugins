@@ -1,5 +1,5 @@
 # =============================================================================
-# AWBotNest 插件：JUAI 自动签到
+# AWBotHub 插件：JUAI 自动签到
 #
 # 每日自动签到 juai（https://www.juaiapi.com）。登录已强制 reCAPTCHA v3，
 # 用平台托管浏览器走一遍登录页让前端自己 grecaptcha.execute，抽出 30 天

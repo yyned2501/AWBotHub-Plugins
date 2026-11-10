@@ -1,4 +1,4 @@
-# AWBotNest 项目说明
+# AWBotHub 项目说明
 
 > 本文件是整个项目的结构与实现说明，供随时了解项目全貌。
 > **每次改动代码后都会即时更新本文件**（见文末「修改记录」）。
@@ -8,7 +8,7 @@
 
 ## 一、这是什么
 
-AWBotNest 是一个 **Telegram 机器人平台**。核心理念：**平台内核 + 单文件插件**。
+AWBotHub 是一个 **Telegram 机器人平台**。核心理念：**平台内核 + 单文件插件**。
 
 - 所有业务功能都是**插件**——一个功能 = 一个 `.py` 文件（或一个目录包），在网页控制台点几下即可上传、安装、开关，无需懂代码、无需重启进程。
 - **内核**只提供通用能力（账号生命周期、插件热插拔、给插件的统一上下文 `ctx`），极少改动。
@@ -88,7 +88,7 @@ AWBotNest 是一个 **Telegram 机器人平台**。核心理念：**平台内核
 | `api.py` | **主 FastAPI 后端**(约 1200 行，`APP_VERSION`)。路由分组：鉴权(`/api/auth/*`)、静态前端、插件管理(`/api/plugins/*` 列/传/开关/重载/删/配置/账号范围/会话/动作/webhook 信息)、插件自带前端(`/fe/`)与插件 API(`/api/`)、GitHub 导入、插件商店、多 Bot 路由、账号管理(三步登录)、平台设置(`/api/settings` 读写 config.json，敏感字段打码)、系统重启/代理测试/DB 测试、Webhook 入站(公开靠 apikey)、系统状态(`/api/status`)、运行日志(历史+WebSocket)。 |
 | `auth.py` | **鉴权**。首次打开网页直接设置管理员用户名和密码(PBKDF2 存 `data/auth.json`)。**无状态令牌** `HMAC(secret, "user:pwd_hash")`(改密自动失效、重启不失效)。依赖：`require_auth`(Bearer)、`require_password_changed`(未完成首次设置返回 428)、`require_resource_access`(资源 Cookie，供 vue 插件 ESM import)。`AWBOTNEST_DEV_NO_AUTH=true` 放行(仅开发)。 |
 | `github_import.py` | **从 GitHub 导入插件**。解析多种来源格式(raw/仓库 URL/blob/`owner/repo[/subdir]`，防 SSRF)。优先读 `manifest.json`(插件市场清单)，无则目录扫描。支持单文件与文件夹递归下载，走平台代理，绕 CDN 缓存。 |
-| `repo_sync.py` | **插件商店/仓库轮询**。聚合官方仓库(`AWdress/AWBotNest-Plugins`)+用户 `PLUGIN_REPOS` 成商店列表(标 installed/official)。轮询(默认 20 分)只做两件事：刷新商店缓存、给已装且 manifest 版本变化的插件下载更新(在运行的热重载)。**绝不自动启用**。状态存 `data/repo_sync.json`。 |
+| `repo_sync.py` | **插件商店/仓库轮询**。聚合官方仓库(`AWdress/AWBotHub-Plugins`)+用户 `PLUGIN_REPOS` 成商店列表(标 installed/official)。轮询(默认 20 分)只做两件事：刷新商店缓存、给已装且 manifest 版本变化的插件下载更新(在运行的热重载)。**绝不自动启用**。状态存 `data/repo_sync.json`。 |
 | `log_stream.py` | **日志流**。接平台 logger 输出到环形缓冲(最近 500 条)+WebSocket 广播，跨线程 `call_soon_threadsafe` 投递。 |
 | `__init__.py` | 包标记。 |
 
